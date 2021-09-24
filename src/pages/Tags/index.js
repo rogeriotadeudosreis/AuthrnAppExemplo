@@ -5,6 +5,7 @@ import { useAuth } from '../../contexts/auth';
 import { listarTags, deletar } from '../../services/tagService';
 
 import { Elogio } from './Elogio';
+import styles from './styles';
 
 
 
@@ -48,15 +49,15 @@ export default function Tags() {
 
 
   return (
-    <View >
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: 50 }}>
-        <Button title="Listar Tags" onPress={handleListarTags} />
-        <Button title="Sair" onPress={handleSignOut} />
+    <View style={{backgroundColor:'#000', flex:1}}>
+      <View style={styles.containerBotoes}>
+        <Button title="Listar Tags" color='green' onPress={handleListarTags} />
+        <Button title="Sair" color='#506d84' onPress={handleSignOut} />
       </View>
 
       {listagem &&
         <View>
-          <Text>Listagem de dados</Text>
+          <Text style={styles.tituloListaElogios}>Listagem de Elogios</Text>
           <FlatList
             data={listagem} keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => <Elogio titulo={item} onPress={() => handleDeletar(item.id)} />}
