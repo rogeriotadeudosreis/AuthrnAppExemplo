@@ -25,7 +25,7 @@ export function SignIn() {
     signIn(usuario);
   }
 
-  function handleSignOut(){
+  function handleSignOut() {
     singOut();
   }
 
