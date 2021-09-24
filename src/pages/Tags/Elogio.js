@@ -10,10 +10,10 @@ export function Elogio(props) {
   
   return (
     //estamos importando o style de outro arquivo
-    <View style={styles.container}>
+    <View style={styles.containerElogios}>
       {/*Passamos tanto a propriedade titulo com o método onpress*/}
-      <Text>{props.titulo.name}</Text>
-      <Button title="x" onPress={props.onPress}  ></Button>
+      <Text style={styles.nomeElogio}>{props.titulo.name}</Text>
+      <Button title="x" color='red' onPress={props.onPress}  ></Button>
     </View>
   )
 }
